@@ -1,0 +1,47 @@
+<!-- hero -->
+<section class="hero">
+    <div class="banner-bg banner-filter" style="background-image: url({{ replace $.Params.featured_image "jpg" "svg" }});"></div>
+    <div class="title-block container">
+        <div class="section">
+            <div class="columns is-centered">
+                <div class="column is-9">
+                    <div>
+                        <h2 class="title is-size-2">
+                            {{ $.LinkTitle }}
+                        </h2>
+                        <div class="post-meta">
+                            <span>{{ $.Params.author }}</span>
+                            <span class="bull">·</span>
+                            <span></span>{{ $.Date.Format "2006-01-02" }}</span>
+                            <span class="bull">·</span>
+                            <figcaption class="is-inline has-text-centered is-size-6">
+                                <div class="post-meta is-inline">
+                                    <span>
+                                        <span class="iconfont icon-category"></span>
+                                    </span>
+                                    <div class="is-inline">
+                                        {{ range .Params.categories }}
+                                        <a href="{{ $.Site.LanguagePrefix }}/categories/{{ . | urlize }}">{{ . }}</a>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                                <span class="bull">·</span>
+                                <div class="post-meta is-inline">
+                                    <span>
+                                        <span class="iconfont icon-tag"></span>
+                                    </span>
+                                    <div class="is-inline">
+                                        {{ range .Params.tags }}
+                                        <a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
+                                        {{ end }}
+                                    </div>
+                                </div>
+
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

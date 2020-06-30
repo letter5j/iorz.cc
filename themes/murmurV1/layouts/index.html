@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{ partial "banner-index.html" . }}
+
+<div class="main-page">
+    <div class="container">
+        <div class="section">
+            {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+            <div class="columns is-centered">
+                <div class="column is-9">
+                    {{ range $paginator.Pages }}
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <a href="{{ .Permalink }}">
+                                    <div class="featured-image image-container" data-src="{{ .Params.featured_image }}">
+                                            <img class="image-placeholder" src="{{ replace .Params.featured_image  ".jpg" ".svg" }}" class="img-small">
+                                    </div>
+                                    <!-- <img class="featured-image image-container" data-src="{{ .Params.featured_image }}"
+                                        alt="featured_image"> -->
+                                    </a>
+                                <figcaption class="is-inline has-text-centered is-size-6 text-muted">
+                                    <div class="post-meta is-inline">
+                                        <span>
+                                            <span class="iconfont icon-category"></span>
+                                        </span>
+                                        <div class="is-inline">
+                                            {{ range .Params.categories }}
+                                            <a href="{{ $.Site.LanguagePrefix }}/categories/{{ . | urlize }}">{{ . }}</a>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    <div class="post-meta is-inline">
+                                        <span>
+                                            <span class="iconfont icon-tag"></span>
+                                        </span>
+                                        <div class="is-inline">
+                                            {{ range .Params.tags }}
+                                            <a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <div class="title has-text-centered"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
+                                    <div class="is-size-6 text-muted has-text-centered">
+
+                                        <div class="post-meta">
+                                            {{ .Date.Format "2006-01-02" }}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="content">
+                                {{ if .Truncated }}
+                                <p>{{ .Summary }}</p>
+                                <div class="is-pulled-right"><a class="button" href="{{ .Permalink }}">繼續閱讀</a></div>
+
+                                {{ else }}
+                                <p>{{ .Content }}</p>
+                                {{ end }}
+                                <br>
+                                <time datetime="2016-1-1"></time>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+
+                    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                        {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
+                        {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Next
+                            page</a>{{ end }}
+                        <ul class="pagination-list">
+                            {{ range $paginator.Pagers }}
+                            <li class="pagination__item">
+                                <a class="pagination-link{{ if eq . $paginator }} is-current{{ end }}" aria-label="Goto page {{ .PageNumber }}"
+                                    href="{{ .URL }}">{{ .PageNumber }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </nav>
+                </div>
+                <!-- <div class="column is-3">
+        {{ partial "widget-tags.html" . }}<br>
+        {{ partial "widget-recent.html" . }}<br>
+        {{ partial "widget-archives.html" . }}
+    </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

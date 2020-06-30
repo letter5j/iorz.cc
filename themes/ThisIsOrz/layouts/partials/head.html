@@ -1,0 +1,99 @@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Title, Description, Author, and Favicon -->
+    {{- with .Title | default .Site.Title }}
+    <title>{{ . }}</title>
+    <meta property="og:title" content="{{ . }}" />
+    <meta name="twitter:title" content="{{ . | truncate 70 }}" /> 
+    {{- end }}
+    {{- with .Description | default .Params.subtitle | default .Summary }}<!-- 注意  -->
+    <meta name="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    <meta name="twitter:description" content="{{ . | truncate 200 }}"> 
+    {{- end }}
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    {{- with .Site.Params.favicon }}
+    <link href='{{ . | absURL }}' rel='icon' type='image/x-icon' /> 
+    {{- end -}}
+    <!-- Social Media Tags -->
+    {{- with .Params.featured_image | default .Params.image | default .Site.Params.logo }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" /> 
+    {{- end }}
+    <meta name="twitter:card" content="summary" /> 
+    {{- with .Site.Author.twitter }}
+    <meta name="twitter:site" content="@{{ . }}" />
+    <meta name="twitter:creator" content="@{{ . }}" /> 
+    {{- end }} 
+    {{- with .Site.Params.fb_app_id }}
+    <meta property="fb:app_id" content="{{ . }}" /> 
+    {{- end }}
+    <meta property="og:url" content="{{ .URL | absURL }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <!-- Hugo Version number -->
+    {{ .Hugo.Generator -}}
+    <!-- Links and stylesheets -->
+    <link rel="canonical" href="{{ .URL | absLangURL }}" />
+    <link rel="alternate" href='{{ "/index.xml"  | absLangURL }}' type="application/rss+xml" title="{{ .Site.Title }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/docs/dist/spectre.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/docs/dist/spectre-exp.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/docs/dist/spectre-icons.min.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/share-buttons.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/hamburgers.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/vs2015.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
+
+    <script>
+        // console内容  
+        var consoleConfig = {
+            // 介紹
+            introduction: "%c黑函是一個憂鬱的文學少年的技術（？）網站。\n使用了靜態網站框架 Hugo，這可是一場折騰的戰役。\n有任何問題歡迎聯絡我(´･ω･`)： %ciorz{AT}love.com\n%c\n",
+            // 頁面使用技術
+            freshTec: "這個網站使用了 WebP 圖片壓縮格式，你注意到了嗎？這是利用 ServiceWorker 辦到的哦。",
+            // 標語
+            subTitle: "請用心渡女孩心中的河，不論日夜，不論夏冬。",
+            // 推廣
+            market: "歡迎訪問 https://zio.tw/ ，看看可憐的少年如何 Murmur 他的生活 (´･ω･`)\n"
+        };
+        // 定义console样式
+        var consoleInfo = (function(consoleConfig){
+
+            // logo
+            //console.log("%c    ","background: url(httpS://iorz.cc/assets/img/logo.png) no-repeat left center;font-size: 60px;","\n");
+            
+            console.log(consoleConfig.introduction,"color: #6190e8;","padding: 0 5px;color: #fff;background: #6190e8;","color: #6190e8;");
+
+            // 頁面使用技術
+            if(consoleConfig.freshTec !== "" ){
+                console.log("%c"+consoleConfig.freshTec,"color: #6190e8","\n\n");            
+            }
+            
+            // 標語
+            if(consoleConfig.subTitle !== "" ){
+                console.log("%c"+consoleConfig.subTitle,"color: #6190e8;","\n\n");
+            }
+
+            // 推廣
+            if(consoleConfig.market !== "" ){
+                console.log("%c"+consoleConfig.market+"\n%c    ","color: #6190e8;"/*,"background: url(http://storage.360buyimg.com/mtd/home/o2qrcode1464836145980.jpg) no-repeat left center;font-size: 100px;"*/,"\n");
+            }   
+            
+        }(consoleConfig));
+
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('{{ "service-worker.js" | absURL }}',
+            { scope: '{{ .URL | absURL }}' }).then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
+</head>

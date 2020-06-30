@@ -1,0 +1,57 @@
+<header>
+    <div class="navbar container grid-lg">
+        <section class="navbar-section">
+        </section>
+        <section class="navbar-center">
+            <!-- centered logo or brand -->
+            <a class="navbar-brand" href="{{ "/" | absLangURL }}" class="btn btn-link">{{ .Site.Title }}</a>
+        </section>
+        <section class="navbar-section">
+
+            <div class="menu-container d-hide">
+            {{ range.Site.Menus.main.ByWeight }} 
+                {{ if .HasChildren }}
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle" tabindex="0">{{ .Name }} <i class="icon icon-caret"></i></a>
+                    <ul class="menu">
+                        {{ range .Children }}
+                        <li class="menu-item">
+                            <a href="#dropdowns" href="{{ .URL | relLangURL }}">{{ .Name }}</a> 
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ else }}
+                <a  class="btn btn-link" title="{{ .Name }}" href="{{ .URL  | relLangURL }}">{{ .Name }}</a>
+                {{ end }} 
+            {{ end }}
+            </div>
+            <!-- toggle Menu -->
+            <button class="hamburger hamburger--collapse hamburger--accessible js-hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+                <span class="hamburger-label">Menu</span>
+            </button>
+
+            <!-- Search Modal -->
+            <!-- {{ if isset .Site.Params "gcse" }}
+            <script>
+                (function () {
+                    var cx = '002424294634258588665:zb_wxqhnive';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+
+            <gcse:searchbox-only></gcse:searchbox-only>
+            {{ end }} -->
+
+
+        </section>
+    </div>
+</header>

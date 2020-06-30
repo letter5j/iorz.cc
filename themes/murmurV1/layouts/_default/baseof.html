@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site Title, Description, Author, and Favicon -->
+    {{- with .Title | default .Site.Title }}
+    <title>{{ . }}</title>
+    <meta property="og:title" content="{{ . }}" />
+    <meta name="twitter:title" content="{{ . | truncate 70 }}" />
+    <meta name="apple-mobile-web-app-title" content="{{ . }}">
+    {{- end }}
+    {{- with .Description | default .Params.subtitle | default .Summary }}
+    <!-- 注意  -->
+    <meta name="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    <meta name="twitter:description" content="{{ . | truncate 200 }}">
+    {{- end }}
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    {{- with .Site.Params.favicon }}
+    <link href='{{ . | absURL }}' rel='icon' type='image/x-icon' />
+    {{- end -}}
+    <!-- Social Media Tags -->
+    {{- with .Params.featured_image | default .Params.image | default .Site.Params.logo }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    {{- end }}
+    <meta name="twitter:site" content="{{ .Site.BaseURL }}" />
+    <meta name="twitter:card" content="summary" />
+    {{- with .Site.Author.twitter }}
+    <meta name="twitter:creator" content="@{{ . }}" />
+    {{- end }}
+    {{- with .Site.Params.fb_app_id }}
+    <meta property="fb:app_id" content="{{ . }}" />
+    {{- end }}
+    <meta property="og:url" content="{{ .URL | absURL }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;subset=chinese-traditional,japanese" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1012192_0xjr5qyf1mx.css">
+    <!-- <link rel="stylesheet" href="{{ "/stylesheets/App.7b6824656b.css" | absURL }}"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bulma@0.7.2/css/bulma.min.css,npm/animate.css@3.7.0,npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" href="{{ "stylesheets/blog.css" | absURL }}" />
+    <script>
+        // console内容  
+        var consoleConfig = {
+            // 介紹
+            introduction: "%cアイネクライネ 是個人發牢騷的地方，還有放一些內心的想法。有任何問題請聯繫(´･ω･`)： %ciorz{AT}love.com\n%c\n",
+            // 頁面使用技術
+            freshTec: "",
+            // 標語
+            subTitle: "",
+            // 推廣
+            market: "歡迎訪問 https://zio.tw/ ，看看可憐的少年如何 Murmur 他的生活 (´･ω･`)\n"
+        };
+        // 定义console样式
+        var consoleInfo = (function (consoleConfig) {
+
+            // logo
+            //console.log("%c    ","background: url(httpS://iorz.cc/assets/img/logo.png) no-repeat left center;font-size: 60px;","\n");
+
+            console.log(consoleConfig.introduction, "color: #6190e8;", "padding: 0 5px;color: #fff;background: #6190e8;", "color: #6190e8;");
+
+            // 頁面使用技術
+            if (consoleConfig.freshTec !== "") {
+                console.log("%c" + consoleConfig.freshTec, "color: #6190e8", "\n\n");
+            }
+
+            // 標語
+            if (consoleConfig.subTitle !== "") {
+                console.log("%c" + consoleConfig.subTitle, "color: #6190e8;", "\n\n");
+            }
+
+            // 推廣
+            if (consoleConfig.market !== "") {
+                console.log("%c" + consoleConfig.market + "\n%c    ", "color: #6190e8;"/*,"background: url(http://storage.360buyimg.com/mtd/home/o2qrcode1464836145980.jpg) no-repeat left center;font-size: 100px;"*/, "\n");
+            }
+
+        }(consoleConfig));
+        // Register the service worker
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('{{ "service-worker.js" | absURL }}',
+        //         { scope: '{{ .URL | absURL }}' }).then(function (registration) {
+        //             // Registration was successful
+        //             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        //         }).catch(function (err) {
+        //             // registration failed :(
+        //             console.log('ServiceWorker registration failed: ', err);
+        //         });
+        // }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16653651-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-16653651-5');
+    </script> -->
+    <!-- <script>
+        /* Asynchronously loading pages */
+        function loadPage(newUrl) {
+            const req = new Request(newUrl)
+
+            fetch(req).then((res) => {
+                return res.text();
+            })
+            .then((data) => {
+                if(data === null || data === "")    return;
+                let wrapper= document.createElement('div');
+                wrapper.innerHTML= data;
+                let newContent = wrapper.querySelector("#mainContent")
+                if (newContent === null)
+                    return;
+                
+                /*  SCROLL TO TOP */
+
+                // document.documentElement.scrollTop = document.body.scrollTop = 0;
+                (function smoothscroll(){
+                    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    if (currentScroll > 0) {
+                        window.requestAnimationFrame(smoothscroll);
+                        window.scrollTo (0,currentScroll - (currentScroll/5));
+                    }
+                })();
+
+                /* change content*/
+                changeMeta(wrapper)
+                let contentElement = document.getElementById("mainContent");
+                contentElement.replaceWith(newContent);
+
+
+
+
+                /* animate content */
+                let section = document.querySelector("section")
+                section.classList.add("animated")
+                section.classList.add("fadeIn")
+                section.classList.add("slower")
+                let mainpage = document.querySelector(".column.is-9")
+                mainpage.classList.add("animated")
+                mainpage.classList.add("slideInUp")
+                mainpage.classList.add("slow")
+
+
+                // /* reinit comment */
+
+                // let comment = newContent.querySelector("script")
+                // if(comment) {
+                //     let commentScriptOri = document.body.querySelector("#comment-script")
+                //     if(commentScriptOri)   commentScriptOri.parentNode.removeChild(commentScriptOri);
+                //     let commentScriptNew = document.createElement('script');
+                //     let src =  comment.getAttribute("src")
+                //     commentScriptNew.setAttribute("id", "comment-script")
+                //     commentScriptNew.setAttribute("src", src)
+                //     document.body.appendChild(commentScriptNew);
+                // }
+
+                let mainScriptOri = document.body.querySelector("#main-script")
+                let src =  mainScriptOri.getAttribute("src")
+                mainScriptOri.parentNode.removeChild(mainScriptOri);
+                let mainScriptNew = document.createElement('script');
+                mainScriptNew.setAttribute("id", "main-script")
+                mainScriptNew.setAttribute("src", src)
+                document.body.appendChild(mainScriptNew);
+
+
+
+            }).catch(function(err) {
+                console.log(err)
+            })
+        };
+
+        function changeMeta(newContent) {
+            let head = document.querySelector("head");
+            let headOri = Array.from(head.children)
+            let headNew = Array.from(newContent.querySelectorAll("meta"))
+            headNew.push(newContent.querySelector("title"))
+            let filterHeadOri = headOri.filter(function(value, index, arr){
+                return value.tagName != "SCRIPT" && value.tagName != "LINK";
+            });
+            Array.prototype.forEach.call( filterHeadOri, function( node ) {
+                node.parentNode.removeChild( node );
+            });
+            Array.prototype.forEach.call( headNew, function( node ) {
+                head.insertBefore(node, head.firstChild);
+            });
+
+        }
+        window.onload = function () {
+            // Make links load asynchronously
+            document.querySelector("body").addEventListener("click", function (event) {
+                let anchor = event.target.closest("a"); 
+                if (anchor === null)
+                    return;
+                // History API needed to make sure back and forward still work
+                if (history === null)
+                    return;
+                // External links should instead open in a new tab
+                event.preventDefault();
+                let newUrl = anchor.href;
+                let domain = [location.protocol, '//', location.host].join('');
+                if (typeof domain !== "string" || newUrl.search(domain) !== 0) {
+                    window.open(newUrl, "_blank");
+                } else {
+                    /* animate content */
+                    loadPage(newUrl);
+                    history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
+                }
+            });
+        }
+        window.onpopstate = function (event) {
+            loadPage(window.location);
+        }
+    </script> -->
+
+
+</head>
+
+<body class="dark-theme">
+
+
+    {{ partial "nav.html" . }}
+    <main id="mainContent">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CIntersectionObserver"></script>
+    <script id="main-script" src="{{ "/scripts/main.js" | absURL }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script>
+          /* Music */
+        let player = document.createElement("div")
+        player.setAttribute("id", "player")
+        document.body.appendChild(player)
+        
+        fetch("https://music.zio.tw/api").then((res)=>res.json()).then((result) => {
+            const ap = new APlayer({
+                container: document.getElementById('player'),
+                fixed: true,
+                autoplay: false,
+                loop: "all",
+                volume: 0.3,
+                order: "random",
+                audio: result.data
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+{{ partial "head.html" . }}
+
+
+<body>
+    {{ partial "nav.html" . }}
+    <main>
+        <div class="container grid-lg">
+            <div class="columns col-oneline">
+                <div class="column">
+                    {{ partial "loop-post.html" . }}
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+{{ partial "footer.html" . }}
+
+</html>

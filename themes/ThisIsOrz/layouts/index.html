@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+{{ partial "head.html" . }}
+
+
+<body>
+    {{ partial "nav.html" . }}
+    <main>
+        <div class="container grid-lg">
+            <div class="columns col-oneline">
+                <div class="column col-xl-12 col-9">
+                    {{ partial "loop-post.html" . }}
+                </div>
+                <div class="column col-3 hide-xl">
+                    <div class="card margintop-2 sidebar">
+                        <div class="card-header post-header">
+                            <h2>Donate</h2>
+                            <div class="divider"> </div>
+                            <div class="card-body sidebar-content">
+                                <div>
+                                    <div class="col-3">
+                                        <label class="form-label" for="input-example-1">Paypal</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <a class="btn btn-primary" href="https://paypal.me/letter5j">Paypal</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-3">
+                                        <label class="form-label" for="input-example-1">BitCoin</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input class="form-input" type="text" value="1JTt6genoXTMnBjYhcAmPNCukUUjgmSiEm" placeholder="BitCoin">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-3">
+                                        <label class="form-label" for="input-example-1">MONERO</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input class="form-input" type="text" value="47xsRPtemuua6uwrxsNuPP7eSnLM1g8p71boYobo3zTsXjhkBkG4bpJeG21Vzoe66fDtU7AtC3Gi61bAaf4e53S5JoYccyP" placeholder="MONERO">
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card margintop-2 sidebar">
+                        <div class="card-header post-header">
+                            <h2>Latest Posts</h2>
+                            <div class="divider"> </div>
+                            <div class="card-body sidebar-content">
+                                <!-- Note that .Data.Pages is the equivalent of .Site.Pages on the homepage template. -->
+                                {{ range first 10 (where .Data.Pages "Section" "post") }}
+                                <div class="sidebar-link"><i class="fa fa-ank"></i> <a href="{{ .Permalink }}">{{ .Title }}</a></div>
+                                {{ end }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+{{ partial "footer.html" . }}
+
+</html>

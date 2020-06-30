@@ -1,0 +1,53 @@
+{{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+{{ range $pag.Pages }}
+<div class="card margintop-2">
+    <div class="card-header post-header">
+        <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+        {{ if .Params.subtitle }}
+            <h3 class="card-subtitle">
+                {{ .Params.subtitle }}
+            </h3>
+        {{ end }}
+    </div>
+    <div class="divider"> </div>
+    <div class="card-body post-content">
+        {{ if .Truncated }}
+            <div class="container">
+                <div class="columns justify-content-between marginbottom-2">        
+                    {{ partial "post_meta.html" . }}
+                </div>
+            </div>
+            {{ .Summary }}
+            
+            <div class="container">
+                <div class="columns col-oneline justify-content-end">
+                    
+                    <div>
+                        <a href="{{ .Permalink }}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            
+        {{ else }}
+            {{ .Content }}
+        {{ end }}
+
+    </div>
+
+</div>
+
+{{ end }}
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+<div class="container margintop-2">
+    <div class="columns col-oneline justify-content-between">
+    {{ if .Paginator.HasNext }}
+        <a class="btn tooltip tooltip-right" data-tooltip="Page {{ .Paginator.Next.PageNumber }}" href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">OLDER POSTS</a>
+    {{ end }}
+    {{ if .Paginator.HasPrev }}
+        <a class="btn tooltip tooltip-left" data-tooltip="Page {{ .Paginator.Prev.PageNumber }}" href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">NEWER POSTS</a>
+    {{ end }}
+    </div>
+    
+</div>
+{{ end }}

@@ -1,0 +1,22 @@
+<div class="post-meta">
+    <span class="date"><i class="fa fa-calendar"></i> {{ .Site.Params.dateformat | .Date.Format }}</span>
+    <span class="author"><i class="fa fa-user"></i> {{ .Site.Author.name }}</span>
+    <span class="categories"><i class="fa fa-folder-open"></i> 
+        <span class="category-container">
+            {{ if .Params.categories }}
+                  {{ range .Params.categories }}
+                      <div class="d-inline-block"><a href="{{ $.Site.LanguagePrefix }}/categories/{{ . | urlize }}">{{ . }}</a></div>
+                  {{ end }}
+            {{ end }}
+        </span>
+    </span>
+    <!-- <span class="tags"><i class="fa fa-tags" aria-hidden="true"></i> 
+        <span class="tag-container">
+            {{ if .Params.tags }}
+                {{ range .Params.tags }}
+                    <div class="d-inline-block">#<a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a></div>
+                {{ end }}
+            {{ end }}
+        </span>
+    </span> -->
+</div>

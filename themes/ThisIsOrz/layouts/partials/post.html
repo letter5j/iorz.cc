@@ -1,0 +1,55 @@
+<main>
+  <div class="container grid-lg">
+    <div class="columns justify-content-center">
+      <div class="column">
+        <div class="card">
+          <div class="card-header">
+            <h2>{{ .Title }}</h2>
+          </div>
+          <div class="divider"> </div>
+          <div class="card-body post-content">
+            <div class="container">
+              <div class="columns justify-content-between align-items-baseline marginbottom-2">
+                {{ partial "post_meta.html" . }}
+              </div>
+              <div class="columns justify-content-end">
+              {{ partial "sharebuttons.html" . }}
+              </div>
+            </div>
+            {{ .Content }}
+          </div>
+          <div class="card-footer">
+            <div class="container">
+              <div class="columns justify-content-end">
+              {{ partial "sharebuttons.html" . }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container margintop-2">
+          <div class="columns col-oneline justify-content-between">
+            {{ if .PrevInSection }}
+                <a class="btn tooltip tooltip-right" data-tooltip="{{ .PrevInSection.Title }}" href="{{ .PrevInSection.Permalink }}">PREVIOUS POST</a>
+            {{ end }}
+            {{ if .NextInSection }}
+                <a class="btn tooltip tooltip-left" data-tooltip="{{ .NextInSection.Title }}" href="{{ .NextInSection.Permalink }}">NEXT POST</a>
+            {{ end }}
+            </div>
+            
+        </div>
+
+
+        {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (.Site.Params.comments))}} 
+          {{ partial "comment.html" . }}
+
+          <!--{{ if .Site.DisqusShortname }}
+          div class="disqus-comments">
+            {{ template "_internal/disqus.html" . }}
+          </div
+          {{ end }} -->
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</main>

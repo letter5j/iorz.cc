@@ -1,0 +1,9 @@
+<!-- image -->
+
+{{ with .Get "src"}}
+<div class="image-container" data-src="{{ . }}">
+    <img class="image-placeholder" src="{{ replace .  ".jpg" ".svg" }}" class="img-small">
+</div>
+<!-- <a href="{{ . }}"><img data-src="{{ . }}" /></a> -->
+{{ end }}
+<!-- image -->

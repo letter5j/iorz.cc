@@ -1,0 +1,11 @@
+{{ if in .Destination "sticker" }}
+
+<img src="{{  .Destination  | safeURL  }}">
+
+{{else}}
+<div class="image-container" data-src="{{ .Destination | safeURL }}">
+    <img class="image-placeholder" src="{{ replace .Destination ".jpg" ".svg" }}" class="img-small">
+</div>
+
+
+{{ end }}

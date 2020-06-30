@@ -1,0 +1,42 @@
+#languageCode = "zh-TW"
+#title = "黑函"
+#baseURL = "https://iorz.cc"
+
+#theme = "hermit"
+#Paginate = 5
+#enableRobotsTXT = true
+
+#[Params]
+  author = "Log"
+  subtitle = "請用真心渡女孩心中的河，不論日夜，不論夏冬。"
+  description = "Hi, I am here."
+  keywords = "murmur, Log"
+
+
+#  logo = "images/avatar-icon.png"
+  favicon = "images/favicon.ico"
+  dateFormat = "2006-01-02"
+  commit = false
+  rss = false
+  comments = true
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+[Author]
+  name = "Log"
+  email = "seanletter5j@Gmail.com"
+  facebook = "Letter.Shin"
+# googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+  github = "letter5j"
+  twitter = "letter5j"
+# reddit = "username"
+# linkedin = "username"
+# xing = "username"
+# stackoverflow = "users/XXXXXXX/username"
+# snapchat = "username"
+  instagram = "letter5j"
+  youtube = "user/letter5j" # or channel/channelname
+# soundcloud = "username"
+# spotify = "username"
+# bandcamp = "username"
+# itchio = "username"

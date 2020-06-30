@@ -1,0 +1,18 @@
+<div class="card margintop-2">
+
+    <div class="card-body">
+        <div class="fb-comments" order_by="time" width="100%" data-href="{{ .Permalink }}" data-numposts="5"></div>
+    </div>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.9&appId=370151580033854";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+</div>
