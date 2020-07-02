@@ -170,14 +170,22 @@ async function processImg() {
   let supportsWebP = await WebpIsSupported()
 
   let imgArr = document.querySelectorAll('.site-main .image-container');
-  const io = new IntersectionObserver(callback);
+  const options = {
+    rootMargin: '300px 100px 300px'
+  }
+  const io = new IntersectionObserver(callback, options);
+
 
   function callback(entries) {
     entries.forEach((item) => { // 遍历entries数组
       if (item.isIntersecting) { // 当前元素可见
 
-        let url = "https://cf.jare.io/?u=";
-        supportsWebP ? url += item.target.dataset.src.replace("jpg", "webp") : url += item.target.dataset.src
+        // let url = "https://cf.jare.io/?u=";
+        let url = "https://cdn.statically.io/img/"
+        let temp = item.target.dataset.src.replace("https://", "")
+        // item.target.dataset.src = item.target.dataset.src.replace("https://", "")
+        // supportsWebP ? url += item.target.dataset.src.replace("jpg", "webp") : url += item.target.dataset.src
+        url += temp + "?f=auto"
         // item.target.src = url // 替换src
 
         io.unobserve(item.target)  // 停止观察当前元素 避免不可见时候再次调用callback函数
@@ -205,7 +213,7 @@ async function processImg() {
           }
         };
         imgLarge.onerror = function () {
-          imgLarge.src = "./images/404.jpg"
+          imgLarge.src = "./404.jpg"
         }
         imgLarge.classList.add('image-picture');
         item.target.appendChild(imgLarge);
@@ -239,6 +247,7 @@ async function processImg() {
     //   item.parentNode.insertBefore(spinner, item);
     //   // spinner.style.display = "none";
     // }
+    
     io.observe(item)
   })
 
