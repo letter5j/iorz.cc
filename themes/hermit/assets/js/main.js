@@ -179,13 +179,14 @@ async function processImg() {
   function callback(entries) {
     entries.forEach((item) => { // 遍历entries数组
       if (item.isIntersecting) { // 当前元素可见
-
+        let size = item.target.getBoundingClientRect()
+        S
         // let url = "https://cf.jare.io/?u=";
         let url = "https://cdn.statically.io/img/"
         let temp = item.target.dataset.src.replace("https://", "")
         // item.target.dataset.src = item.target.dataset.src.replace("https://", "")
         // supportsWebP ? url += item.target.dataset.src.replace("jpg", "webp") : url += item.target.dataset.src
-        url += temp + "?f=auto"
+        url += temp + "?w=" + size.width + "&h=" + size.height + "f=auto"
         // item.target.src = url // 替换src
 
         io.unobserve(item.target)  // 停止观察当前元素 避免不可见时候再次调用callback函数
