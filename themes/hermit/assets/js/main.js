@@ -180,7 +180,7 @@ async function processImg() {
     entries.forEach((item) => { // 遍历entries数组
       if (item.isIntersecting) { // 当前元素可见
         let size = item.target.getBoundingClientRect()
-        S
+        
         // let url = "https://cf.jare.io/?u=";
         let url = "https://cdn.statically.io/img/"
         let temp = item.target.dataset.src.replace("https://", "")
