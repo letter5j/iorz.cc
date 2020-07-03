@@ -30,3 +30,5 @@ fields:
   config:
     required: false
   label: featured_image
+pages:
+- content/posts/medium-progressive-image-loading.md
