@@ -12,6 +12,7 @@ fields:
 - type: text
   name: type
   label: type
+  default: post
 - type: datetime
   name: date
   label: date
