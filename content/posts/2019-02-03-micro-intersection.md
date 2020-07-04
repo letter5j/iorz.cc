@@ -22,8 +22,6 @@ In fact, every detail we had discussed were done before going to sleep. However,
 
 After a series of intense ~~casual~~ discussion, we finally decided Taoyuan, next to Taipei, for our visitation place and for my next trip. When we searched which hotels we could reserve, at this moment, an accident happened. I saw the time showing 4 a.m., and PoPo sent a picture from messager to group. It's unbelievable that there still were people waking at that time.
 
-![驚恐臉](https://sticker.iorz.cc/YOSISTAMP-兔兔100(毒舌篇)/驚恐臉.png)
-
 So I took advantage of this opportunity to invite her joining us to have a  two days trips and told her the reason why we changed the destination just mentioned. What is worth to happy is that she makes no difficulty in this invitation. She immediately promised to join us!
 
 ## Yingge
@@ -42,13 +40,9 @@ In order to solve the difficult problem in the mission, we suffered from painful
 
 After our perfect teamwork, we had done the riddle in 9 hours! Yes, we did it from day to night before 10 p.m.! It tested the IQ of our team and we passed it easily.
 
-![很可以](https://sticker.iorz.cc/YOSISTAMP-兔兔100(毒舌篇)/很可以.png)
-
 ## Hotel
 
 The price of which hotel we stayed is under $1500 NTD, so we could accommodate here for one night without any payment. In the beginning, we wondered why it is so cheap that it could have some hidden problems that we don't know. Nevertheless, after we checking in the hotel and entering the room, comfortable feeling hugged me. Really worth the money to me ~~( in fact didn't pay anything)~~.
-
-![呵呵呵](https://sticker.iorz.cc/YOSISTAMP-兔兔100(毒舌篇)/呵呵呵.png)
 
 No interesting things happened this night, nevertheless,  a weird thing happened. I used to expose my hand outside the quilt when sleeping, and I think it's not a strange habit, right? Before we falling sleep, I was chatting with DinDin. 
 
@@ -58,13 +52,7 @@ Me: "I'm sleeping! And you?"
 
 He replied: "feeling your hand with my hand." and suddenly did a  so perverted behavior as he just said.
 
-![驚恐臉](https://sticker.iorz.cc/YOSISTAMP-兔兔100(毒舌篇)/驚恐臉.png)
-
 WTF he just doing. Due to this accident, I can threaten him by pushing the behavior publicly. ~~(In fact, even if there is no threat, I am still open and honest to tell everyone.)~~
-
-![警察局嗎](https://sticker.iorz.cc/YOSISTAMP-兔兔100(毒舌篇)/警察局嗎.png)
-
-
 
 ## Daxi
 
