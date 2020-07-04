@@ -10,7 +10,7 @@ tags:
   - blog
   - website
   - lazy-loading
-featured_image: XD
+featured_image: https://pic.iorz.cc/medium-progressive-image-loading/1.jpg
 ---
 不知道要打什麼內容，就用幾張圖來占版面好了。( ͡° ͜ʖ ͡°)
 一個頁面太多圖片的話，載入網頁一定會很卡，Lazy Loading 就是一個很常用的小技巧，讓使用者快看到圖片的時候才進行載入，這樣效果會好很多。
@@ -42,13 +42,13 @@ Lazy loading 其實它主要做的事情只有三件：
 
 在 HTML 的  `<img>`  標籤加上  `loading="lazy"`  ：
 
-```
+```html
 <img src="my-image.jpg" loading="lazy">
 ```
 
 ## 判斷瀏覽器是否支援
 
-```
+```javascript
 if ('loading' in HTMLImageElement.prototype) {  
     // 支援原生 lazy loading  
 } else {  
@@ -78,7 +78,7 @@ if ('loading' in HTMLImageElement.prototype) {
 
 而因為 Lazy Loading 的首要步驟就是**不載入原圖**，原本的 `<img>` 標籤不能用於放入原圖，僅能放入我們剛產生的 svg。再來，應對 Medium 的作法，我們得先把這個 svg 塞入原圖應該存在的容器中，讓他大小跟原圖一樣大，後續還原原圖時，才能無縫接軌。這裡我們容器用一個  `<div>` 標籤，並在上面用 `data-src` 標示了原圖的位置：
 
-```
+```html
 <div class="image-container" data-src="temp.jpg">
 	<img class="image-placeholder" src="temp.svg" class="img-small">
 </div>
@@ -88,7 +88,7 @@ if ('loading' in HTMLImageElement.prototype) {
 
 監視畫面元素實作的方式很多，我這邊採用 Vanilla JavaScript 的 IntersectionObserver 方式。概念基本上就是觀測 HTML 上的 Element 有無進入顯示畫面，有的話載入原圖，用 `io.observe(item)` 來觀測目標。
 
-```
+```javascript
 const io = new IntersectionObserver(callback);
 function callback(entries) {
     entries.forEach((item) => { 
@@ -131,7 +131,7 @@ function callback(entries) {
 
 調整一下 CSS
 
-```
+```CSS
 .image-container {
 	position: relative;
 	overflow: hidden;
