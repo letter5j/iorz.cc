@@ -1,7 +1,6 @@
 ---
 title: 涼宮春日的消失 – 我果然選擇了不正常的世界
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:33:06+08:00"
 url: the-disappearance-of-haruhi-suzumiya
 categories: 

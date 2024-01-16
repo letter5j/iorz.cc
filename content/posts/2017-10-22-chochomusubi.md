@@ -1,7 +1,6 @@
 ---
 title: Aimer 蝶々結び
-author: Log
-type: post
+author: Hsin
 date: "2017-10-22T12:00:00+08:00"
 url: 2017-10-22-chochomusubi
 categories:

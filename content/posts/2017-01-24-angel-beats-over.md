@@ -1,7 +1,6 @@
 ---
 title: Angel Beats!完結。死後的世界，你存在還是不存在？
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T14:55:16+08:00"
 url: angel-beats-over
 categories:

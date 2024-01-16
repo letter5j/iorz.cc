@@ -1,7 +1,6 @@
 ---
 title: 借物少女艾莉緹 – 借不走的友情
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:29:34+08:00"
 url: the-borrower-arrietty
 categories: 

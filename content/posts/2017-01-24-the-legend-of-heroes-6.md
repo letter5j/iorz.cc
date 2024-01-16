@@ -1,7 +1,6 @@
 ---
 title: 英雄傳說Ⅵ：空之軌跡
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:35:17+08:00"
 url: the-legend-of-heroes-6
 categories:

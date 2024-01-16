@@ -1,7 +1,6 @@
 ---
 title: 仙境傳說格鬥版 (RBO) 有中文版的唷！
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:23:39+08:00"
 url: game-ragnarok-battle-offline
 categories: 

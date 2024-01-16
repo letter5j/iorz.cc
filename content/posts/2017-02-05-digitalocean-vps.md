@@ -1,7 +1,6 @@
 ---
 title: DigitalOcean VPS 黑函悄悄的搬進來了
-author: Log
-type: post
+author: Hsin
 date: "2017-02-05T22:34:13+08:00"
 url: digitalocean-vps
 categories: 

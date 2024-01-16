@@ -1,7 +1,6 @@
 ---
 title: ThisIsOrz 颯爽登場，Material Design 的佈景主題
-author: Log
-type: post
+author: Hsin
 date: "2017-03-06T17:31:13+08:00"
 url: thisisorz
 categories: 

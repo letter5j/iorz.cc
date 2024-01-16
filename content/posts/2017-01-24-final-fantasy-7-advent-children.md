@@ -1,7 +1,6 @@
 ---
 title: 太空戰士Ⅶ：降臨神子
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:21:06+08:00"
 url: final-fantasy-7-advent-children
 categories:

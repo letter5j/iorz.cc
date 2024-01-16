@@ -1,7 +1,6 @@
 ---
 title: 屍體派對：血之覆蓋 Chapter 1 食完心得 – 來自天神小學的怨靈
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:16:02+08:00"
 url: corpse-party-bloodcovered-repeated-fear-chapter-1
 categories:

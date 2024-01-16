@@ -1,7 +1,6 @@
 ---
 title: Hello Hexo！
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:39:28+08:00"
 url: hello-hexo
 categories: 

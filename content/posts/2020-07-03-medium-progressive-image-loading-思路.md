@@ -1,7 +1,6 @@
 ---
 title: Medium Progressive Image Loading 思路
-author: Log
-type: post
+author: Hsin
 date: 2020-07-03T12:56:34.382Z
 url: medium-progressive-image-loading
 categories:

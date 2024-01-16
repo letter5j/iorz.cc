@@ -1,7 +1,6 @@
 ---
 title: アイネクライネ　始まりました！
-author: Log
-type: post
+author: Hsin
 date: "2017-10-14T12:13:13+08:00"
 url: eine-kleine
 categories: 

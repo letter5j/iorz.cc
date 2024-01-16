@@ -1,7 +1,6 @@
 ---
 title: 屍體派對：血之覆蓋 Chapter 2 食完心得 – 破「繭」而出的屍塊
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:18:22+08:00"
 url: corpse-party-bloodcovered-repeated-fear-chapter-2
 categories:

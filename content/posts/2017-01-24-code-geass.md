@@ -1,7 +1,6 @@
 ---
 title: Code Geass反叛的魯路修 – 魔王，並不孤單。
-author: Log
-type: post
+author: Hsin
 date: "2017-01-24T15:07:54+08:00"
 url: code-geass
 categories: 

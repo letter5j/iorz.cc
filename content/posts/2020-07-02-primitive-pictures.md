@@ -1,7 +1,6 @@
 ---
 title: 把網站圖片轉成 Primitive Pictures 吧
-author: Log
-type: post
+author: Hsin
 date: "2020-07-02T21:13:13+08:00"
 url: primitive-pictures
 categories: 

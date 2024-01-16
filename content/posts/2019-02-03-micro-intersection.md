@@ -1,7 +1,6 @@
 ---
 title: Micro Intersection
-author: Log
-type: post
+author: Hsin
 date: 2019-02-03T18:46:00.000Z
 url: 2019-02-03-diary
 categories:

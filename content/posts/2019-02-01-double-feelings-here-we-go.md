@@ -1,7 +1,6 @@
 ---
 title: Double feelings here we go
-author: Log
-type: post
+author: Hsin
 date: 2019-02-01T18:46:00.000Z
 url: 2019-02-02-diary
 categories:

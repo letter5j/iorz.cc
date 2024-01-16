@@ -1,22 +1,151 @@
 
 
-languageCode = "zh-TW"
-title = "黑函"
-baseURL = "https://iorz.cc"
+# languageCode = "zh-TW"
+# title = "黑函"
+# baseURL = "https://iorz.cc"
 
-theme = "hermit"
-# enableGitInfo = true
+# theme = "hermit"
+# # enableGitInfo = true
+# pygmentsCodefences  = true
+# pygmentsUseClasses  = true
+# hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
+# rssLimit = 10  # Maximum number of items in the RSS feed.
+# # copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+# enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+# # googleAnalytics = "UA-123-45"
+# # disqusShortname = "yourdiscussshortname"
+# [giscus]
+#   repo = "letter5j/iorz-comment"
+#   repoId="R_kgDOLFJdzQ"
+#   category="General"
+#   categoryId="DIC_kwDOLFJdzc4CccFR"
+
+
+# [author]
+#   name = "Hsin"
+
+# [blackfriday]
+#   hrefTargetBlank = true
+#   noreferrerLinks = true
+#   nofollowLinks = true
+
+# [taxonomies]
+#   tag = "tags"
+#   category = "categories"
+#   # Categories are disabled by default.
+
+# [params]
+#   dateform        = "Jan 2, 2006"
+#   dateformShort   = "Jan 2"
+#   dateformNum     = "2006-01-02"
+#   dateformNumTime = "2006-01-02 15:04 -0700"
+
+
+
+#   # Metadata mostly used in document's head
+#   # description = ""
+#   # images = [""]
+#   themeColor = "#494f5c"
+
+#   homeSubtitle = "請用真心渡女孩心中的河，不論日夜，不論夏冬。"
+#   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+#   # bgImg = "bg.jpg"  # Homepage background-image URL
+
+#   # Prefix of link to the git commit detail page. GitInfo must be enabled.
+#   # gitUrl = "https://github.com/username/repository/commit/"
+
+#   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
+#   justifyContent = false  # Set "text-align: justify" to `.content`.
+
+#   relatedPosts = false  # Add a related content section to all single posts page
+
+#   code_copy_button = true # Turn on/off the code-copy-button for code-fields
+  
+#   # Add custom css
+#   customCSS = ["main.css"]
+
+#   # Social Icons
+#   # Check https://github.com/Track3/hermit#social-icons for more info.
+#   [[params.social]]
+#     name = "twitter"
+#     url = "https://twitter.com/letter5j"
+
+#   [[params.social]]
+#     name = "instagram"
+#     url = "https://instagram.com/letter5j"
+
+#   [[params.social]]
+#     name = "github"
+#     url = "https://github.com/letter5j"
+
+# [menu]
+
+#   [[menu.main]]
+#     name = "Posts"
+#     url = "posts/"
+#     weight = 10
+
+#   [[menu.main]]
+#     name = "About"
+#     url = "https://zio.tw/about/"
+#     weight = 20
+
+
+# See this hugo.toml in action at https://github.com/1bl4z3r/hermit-V2/blob/staging/hugo.toml
+# Example Site is Staging branch, acessible at https://github.com/1bl4z3r/hermit-V2/tree/staging
+# To see what each config does, refer to https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/
+# Open Issue or Pull Request at https://github.com/1bl4z3r/hermit-V2
+
+
+
+baseURL = "https://iorz.cc"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+theme = "hermit-V2-1.0.12"
+
+#[languages]
+#  [languages.en]
+#    title = 'CHANGE ME'
+#    [languages.en.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 1
+#  [languages.fr]
+#    title = 'CHANGE ME(FR)'
+#    [languages.fr.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 2
+#  [languages.it]
+#    title = 'CHANGE ME(IT)'
+#    [languages.it.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 3
+ 
+languageCode = "zh-TW"
+
+title = "黑函"
+enableGitInfo = true
+
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
-hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
-rssLimit = 10  # Maximum number of items in the RSS feed.
-# copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
-# googleAnalytics = "UA-123-45"
-# disqusShortname = "yourdiscussshortname"
+hasCJKLanguage = true
 
-[author]
-  name = "Log"
+rssLimit = 10
+
+# copyright = "CHANGE ME"
+enableEmoji = true
+
+# googleAnalytics = "UA-123-45"
+# disqusShortname = "CHANGE ME"
+
+[params.giscus]
+  repo = "letter5j/iorz-comment"
+  repoId="R_kgDOLFJdzQ"
+  category="General"
+  categoryId="DIC_kwDOLFJdzc4CccFR"
+
+[params.author]
+  name = "Hsin"
+  # about = "XD"
 
 [blackfriday]
   hrefTargetBlank = true
@@ -25,8 +154,8 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 
 [taxonomies]
   tag = "tags"
-  category = "categories"
   # Categories are disabled by default.
+  category = "categories"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -34,39 +163,40 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
-  # Metadata mostly used in document's head
-  # description = ""
+  # description = "CHANGE ME SITE DESCRIPTION"
   # images = [""]
   themeColor = "#494f5c"
 
   homeSubtitle = "請用真心渡女孩心中的河，不論日夜，不論夏冬。"
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-  # bgImg = "bg.jpg"  # Homepage background-image URL
+  # bgImg = ""
+  # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  # gitUrl = "https://github.com/username/repository/commit/"
+  justifyContent = false
 
-  # Toggling this option needs to rebuild SCSS, requires Hugo extended version
-  justifyContent = false  # Set "text-align: justify" to `.content`.
+  relatedPosts = true
+  code_copy_button = true
 
-  relatedPosts = false  # Add a related content section to all single posts page
-
-  code_copy_button = true # Turn on/off the code-copy-button for code-fields
+  homeSubtitlePrinter = true
+  scrollToTop = true 
+  global_mathjax = true
+  readTime = true
+  readTimeSeparator = "CHANGE ME READ TIME"
+  legacyLayout = true
+  shareSocial = true
+  # googleTagManager = "GTM-XXXXXXXX"
+  # tagSymbol = "#"
+  # categorySymbol = "⊲"
   
-  # Add custom css
-  customCSS = ["main.css"]
+  # [[params.socialLinks]]
+  #   name = "mastodon"
+  #   url = "https://joinmastodon.org/"
 
-  # Social Icons
-  # Check https://github.com/Track3/hermit#social-icons for more info.
-  [[params.social]]
-    name = "twitter"
+  [[params.socialLinks]]
+    name = "x"
     url = "https://twitter.com/letter5j"
 
-  [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/letter5j"
-
-  [[params.social]]
+  [[params.socialLinks]]
     name = "github"
     url = "https://github.com/letter5j"
 
