@@ -209,5 +209,5 @@ enableEmoji = true
 
   [[menu.main]]
     name = "About"
-    url = "https://zio.tw/about/"
+    url = "https://ouo.ooo/"
     weight = 20
