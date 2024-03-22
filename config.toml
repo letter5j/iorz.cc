@@ -192,9 +192,9 @@ enableEmoji = true
   #   name = "mastodon"
   #   url = "https://joinmastodon.org/"
 
-  [[params.socialLinks]]
-    name = "x"
-    url = "https://twitter.com/letter5j"
+  # [[params.socialLinks]]
+  #   name = "x"
+  #   url = "https://twitter.com/letter5j"
 
   [[params.socialLinks]]
     name = "github"
