@@ -197,16 +197,17 @@ async function processImg() {
       if (item.isIntersecting) { // 当前元素可见
         let size = item.target.getBoundingClientRect()
 
-        // let url = "https://cf.jare.io/?u=";
+        let url = "https://cf.jare.io/?u=";
 
         // let url = "https://cdn.statically.io/img/"
-        let url = "https://wsrv.nl/?url="
+        // let url = "https://wsrv.nl/?url="
 
         let temp = item.target.dataset.src.replace("https://", "")
         // item.target.dataset.src = item.target.dataset.src.replace("https://", "")
         // supportsWebP ? url += item.target.dataset.src.replace("jpg", "webp") : url += item.target.dataset.src
+        url += item.target.dataset.src // for cf
         // url += temp + "?w=" + size.width + "&h=" + size.height + "f=auto" // for staticly
-        url += temp + "&w=" + size.width + "&h=" + size.height + "&output=webp" // for wsrv.nl
+        // url += temp + "&w=" + size.width + "&h=" + size.height + "&output=webp" // for wsrv.nl
         // item.target.src = url // 替换src
 
         io.unobserve(item.target)  // 停止观察当前元素 避免不可见时候再次调用callback函数
