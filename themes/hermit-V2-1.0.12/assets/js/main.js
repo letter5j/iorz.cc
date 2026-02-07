@@ -100,7 +100,7 @@ if (header !== null) {
   listen('#img-btn', "click", showImg);
   listen('.bg-img', "click", hideImg);
 
-  document.querySelectorAll('.post-year').forEach((ele)=> {
+  document.querySelectorAll('.post-year').forEach((ele) => {
     ele.addEventListener('click', () => {
       window.location.hash = '#' + ele.id;
     });
@@ -171,7 +171,7 @@ async function WebpIsSupported() {
 
   // Base64 representation of a white point image
   const webpData = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA=';
-  
+
   // Retrieve the Image in Blob Format
   const blob = await fetch(webpData).then(r => r.blob());
 
@@ -182,7 +182,7 @@ async function WebpIsSupported() {
 // 初始化圖片，並隱藏
 async function processImg() {
 
-  
+
   let supportsWebP = await WebpIsSupported()
 
   let imgArr = document.querySelectorAll('.site-main .image-container');
@@ -196,32 +196,36 @@ async function processImg() {
     entries.forEach((item) => { // 遍历entries数组
       if (item.isIntersecting) { // 当前元素可见
         let size = item.target.getBoundingClientRect()
-        
+
         // let url = "https://cf.jare.io/?u=";
-        let url = "https://cdn.statically.io/img/"
+
+        // let url = "https://cdn.statically.io/img/"
+        let url = "https://images.weserv.nl/?url="
+
         let temp = item.target.dataset.src.replace("https://", "")
         // item.target.dataset.src = item.target.dataset.src.replace("https://", "")
         // supportsWebP ? url += item.target.dataset.src.replace("jpg", "webp") : url += item.target.dataset.src
-        url += temp + "?w=" + size.width + "&h=" + size.height + "f=auto"
+        // url += temp + "?w=" + size.width + "&h=" + size.height + "f=auto" // for staticly
+        url += temp + "&w=" + size.width + "&h=" + size.height + "&output=webp" // for images.weserv.nl
         // item.target.src = url // 替换src
 
         io.unobserve(item.target)  // 停止观察当前元素 避免不可见时候再次调用callback函数
 
         let imgLarge = new Image();
-        imgLarge.src = url; 
+        imgLarge.src = url;
         // imgLarge.onload = function () {
         //   imgLarge.classList.add('image-loaded');  
         // };
         imgLarge.onload = e => {
           // avoid blocking the main thread
           const onDecode = () => {
-            imgLarge.classList.add('image-loaded');  
+            imgLarge.classList.add('image-loaded');
           };
           if (typeof imgLarge.decode === 'function') {
             // Safari currently throws exceptions when decoding svgs.
             // We want to catch that error and allow the load handler
             // to be forwarded to the onLoad handler in this case
-            imgLarge.decode().then(onDecode, ()=>{
+            imgLarge.decode().then(onDecode, () => {
               console.log("Decoded failed!")
               onDecode()
             });
@@ -264,7 +268,7 @@ async function processImg() {
     //   item.parentNode.insertBefore(spinner, item);
     //   // spinner.style.display = "none";
     // }
-    
+
     io.observe(item)
   })
 
